@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 27 56% 96%;
+    --foreground: 0 43% 3%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 43% 3%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 43% 3%;
+
+    --primary: 0 57% 39%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 27 56% 96%;
+    --secondary-foreground: 0 43% 3%;
+
+    --muted: 27 20% 90%;
+    --muted-foreground: 0 0% 31%;
+
+    --accent: 0 57% 39%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 20% 85%;
+    --input: 0 20% 85%;
+    --ring: 0 57% 39%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 0 57% 39%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 0 57% 39%;
+
+    --burgundy: 0 57% 39%;
+    --dark: 0 43% 3%;
+    --grey: 0 0% 31%;
+    --beige: 27 56% 96%;
+  }
+
+  .dark {
+    --background: 0 43% 3%;
+    --foreground: 27 56% 96%;
+    --card: 0 30% 8%;
+    --card-foreground: 27 56% 96%;
+    --popover: 0 30% 8%;
+    --popover-foreground: 27 56% 96%;
+    --primary: 0 57% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 20% 15%;
+    --secondary-foreground: 27 56% 96%;
+    --muted: 0 10% 18%;
+    --muted-foreground: 0 0% 65%;
+    --accent: 0 57% 50%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 15% 20%;
+    --input: 0 15% 20%;
+    --ring: 0 57% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Manrope', sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  .font-heading {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .font-body {
+    font-family: 'Manrope', sans-serif;
+  }
+
+  .btn-radius {
+    border-radius: 10px 10px 0 10px;
+  }
+
+  /* Hide the calendar icon in Chrome/Safari/Edge */
+  .date-input-transparent::-webkit-calendar-picker-indicator {
+    background: transparent;
+    bottom: 0;
+    color: transparent;
+    cursor: pointer;
+    height: auto;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
+  }
+}
+
+/* Fade in animation on scroll */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
